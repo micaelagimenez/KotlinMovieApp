@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Widget.MaterialComponents.TextInputLayout.SearchBox">
+        <item name="android:colorControlNormal">@android:color/transparent</item>
+        <item name="android:colorControlActivated">@color/colorSurfaceLight</item>
+        <item name="android:textColorPrimary">@color/textOnSurfaceHighEmphasis</item>
+        <item name="android:textColorHint">@color/textOnPrimaryMediumEmphasis</item>
+    </style>
+</resources>

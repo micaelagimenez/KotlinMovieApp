@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="movie_title">Bartkowiak</string>
+    <string name="movie_description">After his brother dies in a car crash…</string>
+    <string name="movie_language">EN</string>
+    <string name="movie_release_date">2021–07–28</string>
+    <string name="movie_popularity">8.0</string>
+    <string name="movie_vote_average">444</string>
+    <string name="language_detail">Language: %s</string>
+    <string name="popularity_detail">Popularity: %s</string>
+    <string name="vote_average_detail">Votes: %s</string>
+    <string name="overview_detail">Overview: %s</string>
+    <string name="search">Search movie...</string>
+    <string name="bnRate">Rate Movie</string>
+    <string name="refresh">Refresh</string>
+</resources>

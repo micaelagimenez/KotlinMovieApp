@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorSurface">#455a64</color>
+    <color name="colorSurfaceDark">#263238</color>
+    <color name="colorSurfaceLight">#607d8b</color>
+    <color name="textOnSurfaceHighEmphasis">#ffffff</color>
+    <color name="textOnPrimaryHighEmphasis">#ffffff</color>
+    <color name="textOnPrimaryMediumEmphasis">#B3FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="onPrimaryActivated">#FFFFFF</color>
+    <color name="colorSurfaceTransluscent">#80455a64</color>
+</resources>
