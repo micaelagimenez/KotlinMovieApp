@@ -38,8 +38,6 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
 
         setObservers()
         initRecyclerView()
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -89,8 +87,6 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
             }
         })
     }
-
-
 
     //add search functionality by title
     private fun searchByTitle(query: String) {
