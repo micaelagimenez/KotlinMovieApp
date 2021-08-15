@@ -26,4 +26,6 @@ Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The pos
 <li> [Picasso](http://square.github.io/picasso/) </li>
  <li> [OkHttp3](https://square.github.io/okhttp/) </li> 
  <li> [MaterialRatingBar](https://github.com/zhanghai/MaterialRatingBar) </li>
+ <li> <a href="https://github.com/zhanghai/MaterialRatingBar">MaterialRatingBar</a> </li>
+
  </ul>
