@@ -13,16 +13,17 @@ Simple movie app written in Kotlin and using MVVM architecture that consults the
 Displays a list of the latest popular movies with their titles and posters. Movies can be selected to access their details in a new fragment.
 ### Search bar
 Search bar that allows to filter movies according to the their titles. If movie's title is not found, an error message is displayed for the user to see, otherwise the movie is returned.
-### Details Fragment
-Fragment that shows the clicked movie on main activity's details.### Search bar
+### Movie details
+Fragment that shows the clicked movie on main activity's details.
 ### Rating a movie
 Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The post request with the rating is sent to TMDB. The request is possible through a guest session the user initiates when the app is opened for the first time.
 
  ## Libraries Used
  <ul>
- <li>[Android Data Binding](https://developer.android.com/topic/libraries/data-binding/)</li> <li>[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)</li>
-<li>[LiveData](https://developer.android.com/topic/libraries/architecture/livedata)</li>
-<li>[Retrofit](http://square.github.io/retrofit/)</li>
-<li>[Picasso](http://square.github.io/picasso/)</li>
- <li>[OkHttp3](https://square.github.io/okhttp/) </li> <li>[MaterialRatingBar](https://github.com/zhanghai/MaterialRatingBar)</li>
+ <li> [Android Data Binding](https://developer.android.com/topic/libraries/data-binding/) </li> <li> [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) </li>
+<li> [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) </li>
+<li> [Retrofit](http://square.github.io/retrofit/) </li>
+<li> [Picasso](http://square.github.io/picasso/) </li>
+ <li> [OkHttp3](https://square.github.io/okhttp/) </li> 
+ <li> [MaterialRatingBar](https://github.com/zhanghai/MaterialRatingBar) </li>
  </ul>
