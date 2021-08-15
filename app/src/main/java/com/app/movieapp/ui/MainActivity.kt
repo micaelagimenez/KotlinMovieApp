@@ -1,6 +1,7 @@
 package com.app.movieapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -16,12 +17,12 @@ import com.app.movieapp.databinding.ActivityMainBinding
 import com.app.movieapp.model.Movie
 import com.app.movieapp.utils.NetworkStatus
 
-
 class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.appcompat.widget.SearchView.OnQueryTextListener {
     private lateinit var binding: ActivityMainBinding
     private val movies = mutableListOf<Movie>()
     private lateinit var adapter: RecyclerAdapter
     private lateinit var progressBar: ProgressBar
+    private var sessionId = ""
 
     private val viewModel: MainViewModel by viewModels(
         factoryProducer = { MainViewModelFactory() }
@@ -36,10 +37,11 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
         progressBar = binding.ProgressBar
         progressBar.visibility = View.VISIBLE
 
+        setSessionObservers()
         setObservers()
         initRecyclerView()
     }
-
+    //setup menu options
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
         return true
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
         val id = item.itemId
         if(id== R.id.action_refresh){
             movies.clear()
+            //reload recycler view
             setObservers()
             return true
         }
@@ -61,7 +64,7 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
         binding.rvMovies.adapter = adapter
         adapter.callback = this
     }
-
+    //setup observers for the recycler view's data
     private fun setObservers() {
         viewModel.movieList.observe(this, Observer {
             when (it.status) {
@@ -72,10 +75,11 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
                 NetworkStatus.SUCCESS -> {
                     //hide loading state
                     progressBar.visibility = View.INVISIBLE
-                    //render character list
+                    //render movie list
                     for (movie in it.data!!) {
                         movies.add(movie)
                     }
+                    //update recycler view with items
                     adapter.notifyDataSetChanged()
                 }
                 NetworkStatus.ERROR -> {
@@ -88,15 +92,34 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
         })
     }
 
-    //add search functionality by title
+    //authenticate guest session to be able to rate movies later
+    private fun setSessionObservers() {
+        viewModel.session.observe(this, Observer {
+            when (it.status) {
+                NetworkStatus.LOADING -> {
+                    Log.d("Authentication status: ", "Loading")
+                }
+                NetworkStatus.SUCCESS -> {
+                    sessionId = it.data?.sessionId.toString()
+                    Log.d("Authentication result: ", "$it")
+                }
+                NetworkStatus.ERROR -> {
+                    Log.d("Authetication results: ", "Fail")
+                }
+            }
+        })
+    }
+
+    //setup search functionality by title
     private fun searchByTitle(query: String) {
         val movie = movies.filter { it.title.contains(query, true) }
-
+        //get movie/s if filter has results
         if (movie.isNotEmpty()) {
             movies.clear()
             movies.addAll(movie)
             adapter.notifyDataSetChanged()
         } else {
+            //show user a message if movie's title is not in recycler view
             Toast.makeText(applicationContext, "Title not found", Toast.LENGTH_SHORT).show()
         }
     }
@@ -113,19 +136,21 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
     }
 
     //send details of clicked movie to fragment
-    override fun onMovieClicked(movie: Movie) {
+    override fun onMovieClicked(movieClicked: Movie) {
         val transaction = supportFragmentManager
         val detailFragment = DetailFragment()
         val data = Bundle()
 
         //transfer data to fragment
-        data.putString("Title", movie.title)
-        data.putString("Image", movie.poster)
-        data.putString("Overview", movie.overview)
-        data.putString("Language", movie.originalLanguage)
-        data.putString("Release Date", movie.releaseDate)
-        data.putFloat("Popularity", movie.popularity)
-        data.putFloat("Vote average", movie.voteAverage)
+        data.putString("Session Id", sessionId)
+        data.putInt("Id", movieClicked.id)
+        data.putString("Title", movieClicked.title)
+        data.putString("Image", movieClicked.poster)
+        data.putString("Overview", movieClicked.overview)
+        data.putString("Language", movieClicked.originalLanguage)
+        data.putString("Release Date", movieClicked.releaseDate)
+        data.putFloat("Popularity", movieClicked.popularity)
+        data.putFloat("Vote average", movieClicked.voteAverage)
         detailFragment.arguments = data
 
         transaction.beginTransaction()
@@ -133,4 +158,5 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
             .addToBackStack(null)
             .commit()
     }
+
 }

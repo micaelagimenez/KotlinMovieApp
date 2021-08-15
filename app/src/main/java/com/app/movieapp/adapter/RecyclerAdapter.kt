@@ -27,7 +27,7 @@ class RecyclerAdapter (private var Movies: List<Movie>) : RecyclerView.Adapter<R
             itemTitle.text = movies.title
         }
     }
-
+    //setup callback for clicked movie
     interface Callback {
         fun onMovieClicked(movieClicked: Movie)
     }
@@ -42,7 +42,12 @@ class RecyclerAdapter (private var Movies: List<Movie>) : RecyclerView.Adapter<R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(Movies[position])
 
+        //set on click listener for callback if image or title are clicked
         holder.itemImage.setOnClickListener {
+            callback?.onMovieClicked(Movies[position])
+        }
+
+        holder.itemTitle.setOnClickListener{
             callback?.onMovieClicked(Movies[position])
         }
     }

@@ -15,9 +15,7 @@
     </style>
 
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
-        <!-- Gets rid of the search icon -->
         <item name="searchIcon">@drawable/ic_search</item>
-        <!-- Gets rid of the search icon when the SearchView is expanded -->
         <item name="searchHintIcon">@null</item>
     </style>
 </resources>

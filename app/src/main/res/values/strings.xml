@@ -10,7 +10,8 @@
     <string name="popularity_detail">Popularity: %s</string>
     <string name="vote_average_detail">Votes: %s</string>
     <string name="overview_detail">Overview: %s</string>
-    <string name="search">Search movie...</string>
-    <string name="bnRate">Rate Movie</string>
+    <string name="search">Search movie…</string>
+    <string name="bnRate">Submit</string>
     <string name="refresh">Refresh</string>
+    <string name="rate_movie">Rate Movie</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.app.movieapp.repository
 
 import com.app.movieapp.api.MovieRemoteDataSource
+import com.app.movieapp.model.AuthenticationResponse
 import com.app.movieapp.model.Movie
 
 class MovieRepository constructor(
@@ -8,5 +9,9 @@ class MovieRepository constructor(
 ) {
     fun getMovieList(networkResponse: MovieRemoteDataSource.NetworkResponse<List<Movie>>){
         return remoteDataSource.getMovieList(networkResponse)
+    }
+
+    fun getAuthenticated(networkResponse: MovieRemoteDataSource.NetworkResponse<AuthenticationResponse>){
+        return remoteDataSource.getAuthenticated(networkResponse)
     }
 }

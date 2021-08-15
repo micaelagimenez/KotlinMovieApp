@@ -34,7 +34,7 @@
             android:paddingEnd="10dp"
             android:paddingBottom="8dp"
             android:textColor="@color/textOnPrimaryMediumEmphasis"
-            android:textSize="25sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
             app:layout_constraintTop_toTopOf="@+id/iv_poster_detail" />
@@ -48,7 +48,7 @@
             android:paddingTop="20dp"
             android:paddingEnd="15dp"
             android:textColor="@color/textOnSurfaceHighEmphasis"
-            android:textSize="15sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_poster_detail" />
@@ -61,6 +61,7 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="8dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/textOnSurfaceHighEmphasis"
             app:layout_constraintStart_toEndOf="@+id/tv_release_date"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_detail" />
@@ -73,6 +74,7 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="8dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/textOnSurfaceHighEmphasis"
             app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_detail" />
@@ -97,9 +99,58 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="8dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/textOnSurfaceHighEmphasis"
             app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
             app:layout_constraintTop_toBottomOf="@+id/tv_popularity" />
+
+        <TextView
+            android:id="@+id/lblRateMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_movie"
+            android:paddingTop="8dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:rating="0"
+            app:mrb_progressTint="@color/onPrimaryActivated"
+            android:numStars="10"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblRateMe"
+            style="@style/Widget.MaterialRatingBar.RatingBar" />
+
+        <Button
+            android:id="@+id/btn_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/bnRate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRatingValue" />
+
+        <TextView
+            android:id="@+id/txtRatingValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="5dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
