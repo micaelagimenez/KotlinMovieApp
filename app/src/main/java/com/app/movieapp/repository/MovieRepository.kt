@@ -1,5 +1,6 @@
 package com.app.movieapp.repository
 
+import androidx.lifecycle.LiveData
 import com.app.movieapp.api.MovieRemoteDataSource
 import com.app.movieapp.model.AuthenticationResponse
 import com.app.movieapp.model.Movie
@@ -14,4 +15,5 @@ class MovieRepository constructor(
     fun getAuthenticated(networkResponse: MovieRemoteDataSource.NetworkResponse<AuthenticationResponse>){
         return remoteDataSource.getAuthenticated(networkResponse)
     }
+
 }

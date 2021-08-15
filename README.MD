@@ -20,7 +20,7 @@ Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The pos
 
  ## Libraries Used
  <ul>
- <li> <a href="https://developer.android.com/topic/libraries/data-binding/">Android Data Binding</a> </li>
+ <li> <a href="https://developer.android.com/topic/libraries/data-binding/">Data Binding</a> </li>
  <li> <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel</a> </li>
  <li> <a href="https://developer.android.com/topic/libraries/architecture/livedata">LiveData</a> </li>
  <li> <a href="http://square.github.io/retrofit/">Retrofit</a> </li>
