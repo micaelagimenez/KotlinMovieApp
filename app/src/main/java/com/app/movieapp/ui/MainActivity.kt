@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
         binding.rvMovies.adapter = adapter
         adapter.callback = this
     }
+
     //setup observers for the recycler view's data
     private fun setObservers() {
         viewModel.movieList.observe(this, Observer {
@@ -104,7 +105,7 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
                     Log.d("Authentication result: ", "$it")
                 }
                 NetworkStatus.ERROR -> {
-                    Log.d("Authetication results: ", "Fail")
+                    Log.d("Authentication result: ", "Fail")
                 }
             }
         })

@@ -45,15 +45,13 @@ class DetailFragment : Fragment() {
             val releaseDateString = arguments?.getString("Release Date")
             val popularityString = arguments?.getFloat("Popularity")
             val voteAverageString = arguments?.getFloat("Vote average")
-            //binding data to view
+            //bind data to view
             itemTextTitle.text = titleString
             itemTextOverview.text = getString(R.string.overview_detail, overviewString)
             itemTextLanguage.text = getString(R.string.language_detail, languageString)
             itemTextReleaseDate.text = releaseDateString
-            itemTextPopularity.text =
-                getString(R.string.popularity_detail, popularityString.toString().format("%.3f"))
-            itemTextVoteAverage.text =
-                getString(R.string.vote_average_detail, voteAverageString.toString().format("%.1f"))
+            itemTextPopularity.text = getString(R.string.popularity_detail, popularityString.toString().format("%.3f"))
+            itemTextVoteAverage.text = getString(R.string.vote_average_detail, voteAverageString.toString().format("%.1f"))
             Picasso.get().load(Constants.BASE_IMAGE_URL + imageString).into(itemImage)
         } else {
             //display error message if arguments are null
@@ -75,13 +73,13 @@ class DetailFragment : Fragment() {
         menu.clear()
     }
 
-    //call the observers
+    //call the observers for post request
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObservers()
     }
 
-    //rating bar setup
+    //setup rating bar
     private fun setupRatingBarWithChanges() {
         val ratingBarChanges = binding.ratingBar
         setRatingText(numStars = ratingBarChanges.numStars)
@@ -107,6 +105,7 @@ class DetailFragment : Fragment() {
             }
         })
     }
+
     //rating movie button
     private fun ratingButton() {
         binding.btnRating.setOnClickListener {
@@ -121,6 +120,3 @@ class DetailFragment : Fragment() {
         }
     }
 }
-
-
-

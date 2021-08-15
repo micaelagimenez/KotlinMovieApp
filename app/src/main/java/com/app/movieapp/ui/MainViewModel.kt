@@ -8,6 +8,8 @@ import com.app.movieapp.repository.MovieRepository
 import com.app.movieapp.utils.NetworkStatus
 import com.app.movieapp.utils.Resource
 import com.app.movieapp.model.Movie
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainViewModel constructor(
     private val repository: MovieRepository
