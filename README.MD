@@ -20,12 +20,11 @@ Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The pos
 
  ## Libraries Used
  <ul>
- <li> [Android Data Binding](https://developer.android.com/topic/libraries/data-binding/) </li> <li> [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) </li>
-<li> [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) </li>
-<li> [Retrofit](http://square.github.io/retrofit/) </li>
-<li> [Picasso](http://square.github.io/picasso/) </li>
- <li> [OkHttp3](https://square.github.io/okhttp/) </li> 
- <li> [MaterialRatingBar](https://github.com/zhanghai/MaterialRatingBar) </li>
+ <li> <a href="https://developer.android.com/topic/libraries/data-binding/">Android Data Binding</a> </li>
+ <li> <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel</a> </li>
+ <li> <a href="https://developer.android.com/topic/libraries/architecture/livedata">LiveData</a> </li>
+ <li> <a href="http://square.github.io/retrofit/">Retrofit</a> </li>
+ <li> <a href="http://square.github.io/picasso/">Picasso</a> </li>
+ <li> <a href="http://square.github.io/okhttp/">OkHttp3</a> </li>
  <li> <a href="https://github.com/zhanghai/MaterialRatingBar">MaterialRatingBar</a> </li>
-
  </ul>
