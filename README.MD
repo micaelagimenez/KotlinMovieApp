@@ -6,6 +6,7 @@ Simple movie app written in Kotlin and using MVVM architecture that consults the
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/RecyclerView.jpg" width="250" height="450">
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Detail.jpg" width="250" height="450">
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Search.jpg" width="250" height="450">
+<img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Favorites.jpg" width="250" height="450">
 </p>
 
 ## Structure
@@ -17,6 +18,8 @@ Search bar that allows to filter movies according to the their titles. If movie'
 Fragment that shows the clicked movie on main activity's details.
 ### Rating a movie
 Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The post request with the rating is sent to TMDB. The request is possible through a guest session the user initiates when the app is opened for the first time.
+### Favorite movies
+Fragment that shows the user's favorite movies that are kept in a room database.
 
  ## Libraries Used
  <ul>
@@ -27,4 +30,5 @@ Movies can be rated in the movie's detail's fragment from 1 to 10 stars. The pos
  <li> <a href="http://square.github.io/picasso/">Picasso</a> </li>
  <li> <a href="http://square.github.io/okhttp/">OkHttp3</a> </li>
  <li> <a href="https://github.com/zhanghai/MaterialRatingBar">MaterialRatingBar</a> </li>
+  <li> <a href="https://developer.android.com/training/data-storage/room">Room</a> </li>
  </ul>
