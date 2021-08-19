@@ -4,7 +4,7 @@ Simple movie app written in Kotlin and using MVVM architecture that consults the
 ## Screenshots
 <p float="left">
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/RecyclerView.jpg" width="250" height="450">
-<img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Detail.jpg" width="250" height="450">
+<img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Detail.jpg" width="250" height="450"><br>
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Search.jpg" width="250" height="450">
 <img src="https://github.com/micaelagimenez/KotlinMovieApp/blob/main/screenshots/Favorites.jpg" width="250" height="450">
 </p>
