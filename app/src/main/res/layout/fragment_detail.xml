@@ -33,10 +33,10 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingBottom="8dp"
-            android:textColor="@color/textOnPrimaryMediumEmphasis"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/textOnPrimaryMediumEmphasis"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
+            app:layout_constraintStart_toEndOf="@+id/btnFavItem"
             app:layout_constraintTop_toTopOf="@+id/iv_poster_detail" />
 
         <TextView
@@ -151,6 +151,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <ImageButton
+            android:id="@+id/btnFavItem"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintBottom_toTopOf="@+id/tv_release_date"
+            app:layout_constraintStart_toEndOf="@+id/iv_poster_detail" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

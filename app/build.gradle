@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -77,6 +78,13 @@ dependencies {
 
     //rating bar
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
+
+    //room
+    implementation "androidx.room:room-runtime:2.3.0"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.room:room-ktx:2.3.0"
 
     //test
     testImplementation 'junit:junit:4.+'

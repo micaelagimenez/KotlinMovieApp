@@ -55,6 +55,15 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
             setObservers()
             return true
         }
+        if(id== R.id.action_favorite){
+            val transaction = supportFragmentManager
+            val favoritesFragment = FavoritesFragment()
+            transaction.beginTransaction()
+                .replace(R.id.frag_container, favoritesFragment)
+                .addToBackStack(null)
+                .commit()
+            return true
+        }
         return super.onOptionsItemSelected(item)
     }
 

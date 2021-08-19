@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.app.movieapp.R
 import com.app.movieapp.databinding.FragmentDetailBinding
+import com.app.movieapp.db.FavoriteViewModel
+import com.app.movieapp.db.Favorites
 import com.app.movieapp.utils.Constants
 import com.squareup.picasso.Picasso
 
@@ -19,7 +20,8 @@ import com.squareup.picasso.Picasso
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-
+    private lateinit var mfavoriteViewModel: FavoriteViewModel
+    private lateinit var image: String
     private val viewModel: RatingViewModel by viewModels(
         factoryProducer = { RatingViewModelFactory() }
     )
@@ -27,6 +29,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
+        mfavoriteViewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
 
         //setting up variables for the view binding
         val itemTextTitle: TextView = binding.tvTitleDetail
@@ -53,12 +56,23 @@ class DetailFragment : Fragment() {
             itemTextPopularity.text = getString(R.string.popularity_detail, popularityString.toString().format("%.3f"))
             itemTextVoteAverage.text = getString(R.string.vote_average_detail, voteAverageString.toString().format("%.1f"))
             Picasso.get().load(Constants.BASE_IMAGE_URL + imageString).into(itemImage)
+
+            if (imageString != null) {
+                image = imageString
+            }
         } else {
             //display error message if arguments are null
             Toast.makeText(context, "Error loading content", Toast.LENGTH_SHORT).show()
         }
         setupRatingBarWithChanges()
         ratingButton()
+
+        //add to favorite
+        val itemFavorite: ImageButton = binding.btnFavItem
+        itemFavorite.setOnClickListener {
+            insertDataToDatabase()
+            Toast.makeText(context, "Favorite Saved", Toast.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }
@@ -70,7 +84,6 @@ class DetailFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        menu.clear()
     }
 
     //call the observers for post request
@@ -118,5 +131,17 @@ class DetailFragment : Fragment() {
                 }
             }
         }
+    }
+
+    //insert favorite item to database
+    private fun insertDataToDatabase() {
+        val title = binding.tvTitleDetail.text
+        val image = image
+
+        //create favorite object
+        val favorite = Favorites(id =0, title as String, image)
+        //add data to db
+        mfavoriteViewModel.addFavorite(favorite)
+        Toast.makeText(context,"Successfully added to favorites",Toast.LENGTH_SHORT).show()
     }
 }

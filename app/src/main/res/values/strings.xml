@@ -14,4 +14,6 @@
     <string name="bnRate">Submit</string>
     <string name="refresh">Refresh</string>
     <string name="rate_movie">Rate Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

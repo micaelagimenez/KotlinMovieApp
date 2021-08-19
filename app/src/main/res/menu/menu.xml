@@ -8,5 +8,10 @@
         android:title="@string/refresh"
         app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_fav_white"
+        android:title="Favorite"
+        app:showAsAction="ifRoom"/>
 
 </menu>
