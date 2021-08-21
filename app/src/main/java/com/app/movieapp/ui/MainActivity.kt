@@ -49,9 +49,8 @@ class MainActivity : AppCompatActivity(), RecyclerAdapter.Callback, androidx.app
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        if(id== R.id.action_refresh){
+        if(id== R.id.action_home){
             movies.clear()
-            //reload recycler view
             setObservers()
             return true
         }

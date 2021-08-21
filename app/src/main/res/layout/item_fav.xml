@@ -8,11 +8,9 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="0dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent"
-        tools:context=".Activities.MainActivity">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivFavsImage"
@@ -25,20 +23,24 @@
 
         <TextView
             android:id="@+id/tvFavTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80000000"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:text="News Title"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <ImageButton
             android:id="@+id/btnFavItem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@null"
-            android:src="@drawable/ic_favorite" />
-    </LinearLayout>
+            android:gravity="end"
+            android:src="@drawable/ic_favorite"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

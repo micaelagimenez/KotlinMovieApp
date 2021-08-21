@@ -1,10 +1,8 @@
 package com.app.movieapp.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +26,7 @@ class FavoritesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentFavoritesBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
 
         //recyclerview
         val adapter = FavoritesAdapter(deleteHandler)
@@ -42,6 +41,5 @@ class FavoritesFragment : Fragment() {
 
         return binding.root
     }
-
 
 }

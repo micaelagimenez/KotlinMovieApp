@@ -11,27 +11,29 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
-        android:layout_height="90dp"
-        android:textColor="@android:color/white"
-        android:background="@color/colorSurfaceLight"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:padding="6dp"
-        android:minLines="3"
+        android:layout_height="70dp"
+        android:background="#80000000"
         android:ellipsize="end"
-        tools:text="Black Widow"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="@id/iv_poster"
-        app:layout_constraintEnd_toEndOf="@id/iv_poster"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:minLines="3"
+        android:padding="6dp"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:elevation="4dp"
+        android:text="FDFDFSD"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_poster"
+        tools:text="Black Widow" />
 
     <ImageView
         android:id="@+id/iv_poster"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         tools:src="@drawable/ic_launcher_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
